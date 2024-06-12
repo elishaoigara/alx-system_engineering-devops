@@ -6,3 +6,4 @@ script that displays current directory contents in long format with user and gro
 script that creates a directory named my_first_directory in the /tmp/ directory
 script that moves the file betty from /tmp/ to /tmp/my_first_directory/
 script that deletes the file betty from /tmp/my_first_directory/
+script that deletes the directory my_first_directory from /tmp/
