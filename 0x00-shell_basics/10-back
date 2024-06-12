@@ -1,2 +1,2 @@
 #!/bin/bash
-cd -`
+cd /tmp; [ "$(pwd)" = "/tmp" ] && echo "/tmp" || cd - && pwd
