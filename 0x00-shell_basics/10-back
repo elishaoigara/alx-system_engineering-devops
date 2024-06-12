@@ -1,2 +1,17 @@
 #!/bin/bash
-(cd /tmp || exit; cd - > /dev/null) && pwd
+
+# Get the current directory
+current_dir=$(pwd)
+
+# Change directory to a known directory (in this case /tmp)
+cd /tmp
+
+# Check if the current directory is /tmp
+if [ "$current_dir" = "/tmp" ]; then
+    echo "/tmp"
+else
+    # Change directory back to the previous one
+    cd -
+    pwd
+fi
+

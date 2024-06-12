@@ -10,3 +10,4 @@ script that deletes the directory my_first_directory from /tmp/
 script that changes the working directory to the previous one
 script that changes the working directory to the previous one
 script that changes the working directory to the previous one
+script that changes the working directory to the previous one
