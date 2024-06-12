@@ -1,2 +1,2 @@
 #!/bin/bash
-cd /tmp; [ "$(pwd)" = "/tmp" ] && echo "/tmp" || cd - && pwd
+(cd /tmp || exit; cd - > /dev/null) && pwd
