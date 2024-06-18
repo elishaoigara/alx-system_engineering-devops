@@ -1,1 +1,5 @@
-script that displays the current directory contents in a long format
+<<<<<<< HEAD
+this is my readme for this project
+=======
+
+>>>>>>> origin/master
