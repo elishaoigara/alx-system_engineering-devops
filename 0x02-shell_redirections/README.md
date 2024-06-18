@@ -1,2 +1,5 @@
-# 0x02-shell_redirections
-## 0-hello_world
+<<<<<<< HEAD
+this is my readme for this project
+=======
+
+>>>>>>> origin/master
