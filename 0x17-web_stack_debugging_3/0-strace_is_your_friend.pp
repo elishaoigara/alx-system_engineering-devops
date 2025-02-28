@@ -1,10 +1,31 @@
-# A puppet manuscript to replace a line in a file on a server
+# This Puppet manifest ensures Apache is installed, running, and fixes common issues
+class web_debugging {
+  
+  # Ensure Apache2 is installed
+  package { 'apache2':
+    ensure => installed,
+  }
 
-$file_to_edit = '/var/www/html/wp-settings.php'
+  # Ensure Apache2 service is running
+  service { 'apache2':
+    ensure    => running,
+    enable    => true,
+    require   => Package['apache2'],
+  }
 
-#replacing line containing "phpp" with "php"
+  # Fix missing modules or permissions
+  exec { 'fix_apache_permissions':
+    command => '/bin/chmod -R 755 /var/www/html',
+    onlyif  => '/usr/bin/test -d /var/www/html',
+    require => Service['apache2'],
+  }
 
-exec { 'replace_line':
-  command => "sed -i 's/phpp/php/g' ${file_to_edit}",
-  path    => ['/bin','/usr/bin']
+  # Restart Apache to apply changes
+  exec { 'restart_apache':
+    command => '/usr/sbin/service apache2 restart',
+    require => Service['apache2'],
+  }
+
 }
+
+include web_debugging
